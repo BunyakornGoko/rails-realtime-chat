@@ -1,5 +1,5 @@
 #messages {
-  height: 550px; /* or any height you prefer */
+  height: 700px; /* or any height you prefer */
   overflow-y: auto;
   display: flex;
   flex-direction: column;
