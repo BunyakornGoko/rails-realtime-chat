@@ -1,0 +1,12 @@
+<h1>Odds Chat</h1>
+
+<div id="messages" data-controller="scroll">
+  <%= turbo_stream_from "messages" %>
+  <%= render @messages %>
+</div>
+
+<%= form_with model: Message.new do |f| %>
+  <%= f.text_field :user, placeholder: "Your Name" %>
+  <%= f.text_field :content, placeholder: "Type a message..." %>
+  <%= f.submit "Chat", class: "send-button" %>
+<% end %>
