@@ -4,10 +4,17 @@ class MessagesController < ApplicationController
     end
   
     def create
-      @message = Message.create(message_params)
+      @message = Message.new(message_params)
   
-      unless @message.save
-        redirect_to messages_path
+      if @message.save
+        # Success case is handled by broadcasts_to
+      else
+        respond_to do |format|
+          format.turbo_stream { 
+            render turbo_stream: turbo_stream.update('message_errors', 
+              partial: 'messages/errors', locals: { message: @message }) 
+          }
+        end
       end
     end
   

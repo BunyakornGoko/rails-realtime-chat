@@ -1,5 +1,5 @@
 #messages {
-  height: 700px; /* or any height you prefer */
+  height: 600px; /* or any height you prefer */
   overflow-y: auto;
   display: flex;
   flex-direction: column;
@@ -66,4 +66,18 @@ h1 {
   margin-bottom: 20px;
   padding-bottom: 10px;
   border-bottom: 2px solid #4caf50;
+}
+
+/* Add this to your existing CSS */
+.error-messages {
+  color: #dc3545;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.error {
+  background-color: #ffe6e6;
+  padding: 8px;
+  border-radius: 4px;
+  margin-bottom: 5px;
 }
